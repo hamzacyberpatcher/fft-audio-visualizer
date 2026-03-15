@@ -17,3 +17,39 @@ You must have the development headers for both SFML and FFTW3 installed on your 
 ```bash
 sudo apt update
 sudo apt install libsfml-dev libfftw3-dev g++
+```
+
+## 🏗️ Build & Run
+
+From the project root:
+
+```bash
+# compile
+g++ -std=c++17 fftw_experiment.cpp -o fftw_experiment -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio -lfftw3
+
+# run
+./fftw_experiment
+```
+
+If you prefer Make:
+
+```bash
+cat > Makefile <<'EOF'
+CXX := g++
+CXXFLAGS := -std=c++17 -O2
+LIBS := -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio -lfftw3
+TARGET := fftw_experiment
+SRC := fftw_experiment.cpp
+
+all: $(TARGET)
+
+$(TARGET): $(SRC)
+	$(CXX) $(CXXFLAGS) $^ -o $@ $(LIBS)
+
+clean:
+	rm -f $(TARGET)
+EOF
+
+make
+./fftw_experiment
+```
