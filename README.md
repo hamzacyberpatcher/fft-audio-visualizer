@@ -25,10 +25,10 @@ From the project root:
 
 ```bash
 # compile
-g++ -std=c++17 fftw_experiment.cpp -o fftw_experiment -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio -lfftw3
+g++ -std=c++17 main.cpp -o main -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio -lfftw3
 
 # run
-./fftw_experiment
+./main
 ```
 
 If you prefer Make:
@@ -38,8 +38,8 @@ cat > Makefile <<'EOF'
 CXX := g++
 CXXFLAGS := -std=c++17 -O2
 LIBS := -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio -lfftw3
-TARGET := fftw_experiment
-SRC := fftw_experiment.cpp
+TARGET := main
+SRC := main.cpp
 
 all: $(TARGET)
 
