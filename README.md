@@ -51,5 +51,5 @@ clean:
 EOF
 
 make
-./fftw_experiment
+./main
 ```
